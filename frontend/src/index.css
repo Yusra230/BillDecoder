@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas-bg: #F8F9FA;
+    --surface-bg: #FFFFFF;
+    --border-subtle: #E5E7EB;
+  }
+
+  body {
+    background-color: #F8F9FA;
+    color: #18181B;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Refined scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4D4D8;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A1A1AA;
+  }
+}
+
+@layer utilities {
+  .tabular-numbers {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hairline-border {
+    border-color: rgba(228, 228, 231, 0.85);
+  }
+
+  .surface-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(228, 228, 231, 0.85);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  }
+
+  .surface-card-interactive {
+    background: #FFFFFF;
+    border: 1px solid rgba(228, 228, 231, 0.85);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .surface-card-interactive:hover {
+    border-color: rgba(212, 212, 216, 1);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    transform: translateY(-1px);
+  }
+}
