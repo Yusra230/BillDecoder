@@ -26,7 +26,7 @@ export function UploadPage() {
 
   const steps = [
     'Transmitting high-resolution image to processing node',
-    'Gemini 3.5 Flash-Lite multimodal document parsing',
+    'Multimodal document parsing',
     'Extracting readings, itemized charges & statutory taxes',
     'Pydantic schema validation & numeric reconciliation',
   ];
@@ -245,7 +245,7 @@ export function UploadPage() {
           <div className="flex items-center justify-between pt-1">
             <div className="flex items-center space-x-1.5 text-xs text-ink-500">
               <Shield className="w-3.5 h-3.5 text-emerald-700" />
-              <span className="text-[11px]">PII scrubbed per Section 5.3 rules</span>
+              <span className="text-[11px]">PII scrubbed</span>
             </div>
 
             <button

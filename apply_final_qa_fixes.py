@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from core.csv_writer import write_level1_csv, write_level2_csv
 from core.validator import validate_level1_csv, validate_level2_csv
-from package_submission import create_submission_zip
+from scripts.package_submission import create_submission_zip
 
 def fix_level1():
     p = Path("output/level1.csv")

@@ -238,7 +238,7 @@ export function BillDetailPage() {
                 <div className="flex items-center space-x-2">
                   <Code className="w-4 h-4 text-ink-700" />
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-900">
-                    Competition Level 1 Standard JSON
+                    Level 1 Standard JSON
                   </h4>
                 </div>
                 <button

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Card } from '../ui/Card';
 import { Eye, ZoomIn, ZoomOut, Maximize2, X, FileImage } from 'lucide-react';
 import { getBillImageUrl } from '../../api/client';
@@ -7,6 +7,14 @@ export function ImageViewer({ billId, filename }) {
   const [zoom, setZoom] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const imgUrl = getBillImageUrl(billId);
+  const scrollRef = useRef(null);
+
+  // Reset scroll to top whenever the modal opens
+  useEffect(() => {
+    if (isModalOpen && scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [isModalOpen]);
 
   return (
     <>
@@ -85,12 +93,15 @@ export function ImageViewer({ billId, filename }) {
               </div>
             </div>
 
-            <div className="flex-1 overflow-auto p-4 sm:p-8 bg-canvas/60 flex items-center justify-center">
+            <div
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto p-4 sm:p-8 bg-canvas/60"
+            >
               <img
                 src={imgUrl}
                 alt="Enlarged Bill Scan"
                 style={{ transform: `scale(${zoom})`, transformOrigin: 'top center' }}
-                className="max-w-full h-auto transition-transform rounded border border-ink-200 shadow-card"
+                className="mx-auto block max-w-full h-auto transition-transform rounded border border-ink-200 shadow-card"
               />
             </div>
           </div>
